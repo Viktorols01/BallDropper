@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0p0xymggx0nh"]
+
+[ext_resource type="Texture2D" uid="uid://cpihymu2gumsk" path="res://Images/SimpleTriangle.png" id="1_14xqw"]
+
+[node name="StaticTriangle" type="StaticBody2D"]
+position = Vector2(486, 215)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, 9)
+texture = ExtResource("1_14xqw")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -21)
+scale = Vector2(9.78, 9.48)
+polygon = PackedVector2Array(10.5317, 9.49367, -10.7362, 9.49367, -0.102249, -9.81013)

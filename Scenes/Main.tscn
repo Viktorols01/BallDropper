@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://xssrh1c64tmb"]
+
+[ext_resource type="PackedScene" uid="uid://dl5q722s2yfu2" path="res://Instances/Obstacles/SimpleRectangle.tscn" id="1_hey6a"]
+[ext_resource type="Script" path="res://Scripts/rotation.gd" id="3_j6ipg"]
+[ext_resource type="PackedScene" uid="uid://bjxd64ubqkhl5" path="res://Instances/Obstacles/SimpleCircle.tscn" id="4_gm68c"]
+[ext_resource type="PackedScene" uid="uid://b0p0xymggx0nh" path="res://Instances/Obstacles/SimpleTriangle.tscn" id="5_8lygh"]
+[ext_resource type="PackedScene" uid="uid://c7tw884ex07td" path="res://Instances/Obstacles/SimpleStar.tscn" id="6_e5man"]
+[ext_resource type="Script" path="res://Scripts/rotation_tick.gd" id="7_6a4vl"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wc4l0"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="World" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World"]
+position = Vector2(-1219, 1181)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(1219, 580)
+shape = SubResource("WorldBoundaryShape2D_wc4l0")
+
+[node name="ColorRect" type="ColorRect" parent="World"]
+show_behind_parent = true
+offset_left = -3310.0
+offset_top = -2623.0
+offset_right = -747.0
+offset_bottom = -784.0
+scale = Vector2(3.16134, 4.08207)
+
+[node name="Obstacles" type="Node" parent="World"]
+
+[node name="StaticRectangle3" parent="World/Obstacles" instance=ExtResource("1_hey6a")]
+position = Vector2(80.0001, 775)
+rotation = 0.326952
+
+[node name="StaticRectangle2" parent="World/Obstacles" instance=ExtResource("1_hey6a")]
+position = Vector2(917, 798)
+rotation = -0.608904
+
+[node name="StaticRectangle" parent="World/Obstacles" instance=ExtResource("1_hey6a")]
+position = Vector2(-443, -75)
+script = ExtResource("3_j6ipg")
+speed = 4
+
+[node name="StaticCircle" parent="World/Obstacles" instance=ExtResource("4_gm68c")]
+position = Vector2(-289, 1180)
+
+[node name="StaticCircle3" parent="World/Obstacles" instance=ExtResource("4_gm68c")]
+position = Vector2(1130, -304)
+
+[node name="StaticCircle2" parent="World/Obstacles" instance=ExtResource("4_gm68c")]
+position = Vector2(984, 306)
+
+[node name="StaticCircle4" parent="World/Obstacles" instance=ExtResource("4_gm68c")]
+position = Vector2(-520, 790)
+
+[node name="StaticCircle5" parent="World/Obstacles" instance=ExtResource("4_gm68c")]
+position = Vector2(508, 1155)
+
+[node name="StaticTriangle" parent="World/Obstacles" instance=ExtResource("5_8lygh")]
+position = Vector2(272, 472)
+script = ExtResource("3_j6ipg")
+speed = 2
+
+[node name="StaticStar" parent="World/Obstacles" instance=ExtResource("6_e5man")]
+position = Vector2(534, 233)
+script = ExtResource("7_6a4vl")

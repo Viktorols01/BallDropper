@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://blei3hw072tmt"]
+
+[ext_resource type="Texture2D" uid="uid://bc18ubp1tbpgn" path="res://Images/Henrik.png" id="1_yjkgb"]
+
+[node name="HenrikBall" type="RigidBody2D"]
+position = Vector2(-4, 4)
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -5)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("1_yjkgb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-26, -35)
+scale = Vector2(0.62, 0.62)
+polygon = PackedVector2Array(61, -22, 91, -9, 103, 21, 105, 41, 97, 50, 93, 80, 83, 106, 60, 121, 37, 121, 14, 113, 0, 90, -15, 62, -12, 48, -10, 22, 0, -1, 23, -23)
